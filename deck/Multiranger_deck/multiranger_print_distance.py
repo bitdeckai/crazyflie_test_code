@@ -11,10 +11,22 @@
 PowerShell 运行示例：
 
     $env:CFLIB_URI = "radio://0/80/2M/E7E7E7E7E7"
-    python .\deck\multiranger\multiranger_print_distance.py
+    python .\deck\Multiranger_deck\multiranger_print_distance.py
 
 按 Ctrl+C 停止程序。如果出现 ``KeyError: Variable range.front not in TOC``，
 请检查 Crazyflie 固件版本，以及 Multi-ranger Deck 是否已被正确识别。
+
+数据判定参考：
+
+正常判据：
+- front/back/left/right/up/down 多数时间返回有效距离（单位 m）。
+- 静止时各方向距离仅小幅波动。
+- 在某一方向靠近障碍物时，对应方向距离持续减小，远离时回升。
+
+异常判据：
+- 多个方向长期为 None 或固定异常值。
+- 静止状态下距离大幅抖动且无规律。
+- 移动到障碍物附近时对应方向距离无明显变化。
 
 官方库：https://github.com/bitcraze/crazyflie-lib-python
 """
