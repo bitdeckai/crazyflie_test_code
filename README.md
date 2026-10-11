@@ -29,6 +29,7 @@ $env:CFLIB_URI = "radio://0/80/2M/E7E7E7E701"
 3. 进入 deck 目录文档按需运行脚本
 
 - 见 `deck/README.md`
+- deck 日志示例在 `deck/README.md` 的“各脚本测试日志示例”章节
 
 ## Crazyradio 基础测试
 
